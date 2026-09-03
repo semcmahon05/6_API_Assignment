@@ -22,16 +22,32 @@ data = yf.download(tickers,
     interval="##d",
     auto_adjust=True)
 
-#Closing Prices Only
+#Use closing price for each day, not opening or average for the day.
 prices = data["Close"].dropna()
 
 
 # Dash App
+
 app = Dash(__name__)
+
 app.title = "####"
 
+app.layout = html.Div(
+    [
+        html.H1("Heading 1", style={"textAlign": "center"}),
 
+        html.H2("Heading 2", style={"textAlign": "center"}),
 
+        html.P(
+            "Source: Yahoo Finance using yfinance",
+            style={
+                "textAlign": "center",
+                "fontStyle": "italic",
+                "color": "black",
+            },
+        ),
+    ]
+)
 
 if __name__ == "__main__":
     app.run(debug=True)
@@ -59,4 +75,5 @@ moving_average = prices.rolling(30).mean()
 
 
 # Labels and Source
+
 
