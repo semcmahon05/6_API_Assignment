@@ -37,11 +37,26 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 ## Fetch API
+
 ### 2 series over 1 year
+
 ## Display a static image (logo, graphic, image)
+
 ## Interactive Chart (line, area, bar, combo)
+
 ### Hover, zoom, legend toggle
+
 ### Callback: series to show, date range, transformation
+
 ### Two analytics: normalization, percent change, rolling average, resampling
+
+
+# daily returns
+daily_returns = prices.pct_change() * 100
+
+#30 day rolling average
+moving_average = prices.rolling(30).mean()
+
+
 # Labels and Source
 
