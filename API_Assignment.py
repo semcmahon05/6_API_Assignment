@@ -15,11 +15,11 @@ import pandas as pd
 
 # Get Data from Yahoo Finance
 
-tickers = [" ", " "]
+tickers = ["AAPL"]   
 
 data = yf.download(tickers,
-    period="##y",
-    interval="##d",
+    period="1y",
+    interval="1d",
     auto_adjust=True)
 
 #Use closing price for each day, not opening or average for the day.
@@ -38,6 +38,10 @@ app.layout = html.Div(
         html.H2("Heading 2"),
 
         html.P("Source: Yahoo Finance using yfinance"),
+
+        html.P(f'Daily Returns: {prices.pct_change() * 100}'),
+
+        html.P(f'Moving Average: {prices.rolling(30).mean()}')
     ]
 )
 
