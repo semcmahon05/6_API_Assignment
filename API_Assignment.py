@@ -29,23 +29,15 @@ prices = data["Close"].dropna()
 # Dash App
 
 app = Dash(__name__)
-
-app.title = "####"
+app.title = "API Assignment - "
 
 app.layout = html.Div(
     [
-        html.H1("Heading 1", style={"textAlign": "center"}),
+        html.H1("API Assignment - "),
 
-        html.H2("Heading 2", style={"textAlign": "center"}),
+        html.H2("Heading 2"),
 
-        html.P(
-            "Source: Yahoo Finance using yfinance",
-            style={
-                "textAlign": "center",
-                "fontStyle": "italic",
-                "color": "black",
-            },
-        ),
+        html.P("Source: Yahoo Finance using yfinance"),
     ]
 )
 

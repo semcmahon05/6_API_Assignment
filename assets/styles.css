@@ -1,0 +1,11 @@
+body, html {
+    padding:40px;
+    background: white;
+    color: black;
+    font: 16px Arial, sans-serif;
+    text-align: center;
+}
+
+p{
+    font-style: italic;
+}
