@@ -20,9 +20,21 @@ moving_average = prices.rolling(30).mean()
 app = Dash(__name__)
 
 
-app.layout = html.Div([
+app.layout = html.Div(
+    [
+        html.Img(src=app.get_asset_url("image.jpg"),
+             style= {
+                 "height": "100px",
+                 "display": "block",
+                 "marginLeft": "auto",
+                 "marginRight": "auto"
+             }),
 
     html.H1("Coke vs. Pepsi"),
+    
+    html.H2("API Assignment - Group 6: Nick, Michael, Sadie"),
+
+    html.P("Source: Yahoo Finance using yfinance"),
 
     dcc.Dropdown(
         id="analysis-dropdown",
